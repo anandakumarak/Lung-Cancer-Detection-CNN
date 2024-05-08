@@ -68,7 +68,9 @@
   <p>Below is an example of the model's prediction:</p>
   <img src = "https://github.com/anandakumarak/LUNG-CANCER-DETECTION-USING-CNN/blob/main/Model%20Output.png" alt="Sample Output Image" width="700">
   <p>The green color box in the above output image is not a prediction by the model; it is present in the test images.</p>
-  
+
+  <h2>Future Work</h2>
+  <p>In future work, I plan to develop a Mask R-CNN (Mask Region-based Convolutional Neural Network) model to detect lung cancer by marking the regions where cancer cells are present.</p>
   
 </body>
 </html>
