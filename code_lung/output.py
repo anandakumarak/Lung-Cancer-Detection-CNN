@@ -3,7 +3,7 @@ import cv2
 from keras.models import load_model
 
 # Load the saved model
-loaded_model = load_model('lung_cancer_model.h5')
+loaded_model = load_model('D:\\PROJECTS\\LUNG_CANCER\\code_lung\\lung_cancer_model.h5')
 
 # Function to preprocess input image
 def preprocess_image(image_path):
@@ -28,11 +28,17 @@ def predict_cancer(image_path):
     return predicted_label, accuracy
 
 # Provide the path to your input image
-input_image_path = 'D:\\PROJECTS\\LUNG_CANCER\\dataset\\The_IQ_OTHNCCD_lung_cancer_dataset\\The_IQ_OTHNCCD_lung_cancer_dataset\\Normal_cases\\Normal case (105).jpg'
+input_image_path = 'D:\\Projects\\Lung_Cancer\\dataset\\Test cases\\000058_07_01_170.png'
 
 # Make prediction
 prediction, accuracy = predict_cancer(input_image_path)
 
-# Print the predicted label and accuracy
-print("Prediction:", prediction)
-print("Accuracy:", accuracy)
+# Read the image
+image = cv2.imread(input_image_path)
+print('Prediction :' ,prediction)
+print('Accuracy :',accuracy)
+# Display the image with predicted label and accuracy
+cv2.putText(image, f"Prediction: {prediction}, Accuracy: {accuracy:.2f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+cv2.imshow("Prediction", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
